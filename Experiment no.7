@@ -1,0 +1,90 @@
+Problem Statement 1
+#include <iostream>
+using namespace std;
+
+class Complex {
+    int real, imag;
+public:
+    void accept() {
+        cout << "Enter real and imaginary part: ";
+        cin >> real >> imag;
+    }
+    Complex operator+(Complex c) {
+        Complex temp;
+        temp.real = real + c.real;
+        temp.imag = imag + c.imag;
+        return temp;
+    }
+    void display() {
+        cout << real << " + " << imag << "i" << endl;
+    }
+};
+
+int main() {
+    Complex c1, c2, c3;
+    cout << "Enter first complex number:\n";
+    c1.accept();
+    cout << "Enter second complex number:\n";
+    c2.accept();
+    c3 = c1 + c2;
+    cout << "Sum = ";
+    c3.display();
+    return 0;
+}
+
+Problem Statement 2
+#include <iostream>
+using namespace std;
+
+class Person {
+    int age;
+public:
+    void accept() {
+        cout << "Enter age: ";
+        cin >> age;
+    }
+    bool operator==(Person p) {
+        return age == p.age;
+    }
+};
+
+int main() {
+    Person p1, p2;
+    cout << "Enter first person’s age:\n";
+    p1.accept();
+    cout << "Enter second person’s age:\n";
+    p2.accept();
+
+    if(p1 == p2)
+        cout << "Both are of the same age.";
+    else
+        cout << "They have different ages.";
+    return 0;
+}
+
+Problem Statement 3
+#include <iostream>
+using namespace std;
+
+class Employee {
+    int salary;
+public:
+    void accept() {
+        cout << "Enter salary: ";
+        cin >> salary;
+    }
+    void display() {
+        cout << "Salary: " << salary << endl;
+    }
+    void operator++() {  // prefix increment
+        salary += 1000;
+    }
+};
+
+int main() {
+    Employee e;
+    e.accept();
+    ++e;  // increase salary by 1000
+    e.display();
+    return 0;
+}

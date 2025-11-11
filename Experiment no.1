@@ -1,0 +1,80 @@
+Problem statement 1
+#include <iostream>
+using namespace std;
+
+class Student {
+public:
+    string name;
+    int rollno;
+    void accept() {
+        cout << "Enter name: ";
+        cin >> name;
+        cout << "Enter roll no: ";
+        cin >> rollno;
+    }
+    void display() {
+        cout << "\nName: " << name << "\nRoll No: " << rollno;
+    }
+};
+
+int main() {
+    Student s;
+    s.accept();
+    s.display();
+    return 0;
+}
+
+Problem Statemnt 2
+#include <iostream>
+using namespace std;
+
+class Book {
+public:
+    string book_name;
+    float price;
+    void accept() {
+        cout << "Enter book name: ";
+        cin >> book_name;
+        cout << "Enter price: ";
+        cin >> price;
+    }
+    void display() {
+        cout << "Book: " << book_name << "  Price: " << price << endl;
+    }
+};
+
+int main() {
+    Book b1, b2;
+    b1.accept();
+    b2.accept();
+    cout << "\nBooks with greater price:\n";
+    if(b1.price > b2.price)
+        b1.display();
+    else
+        b2.display();
+    return 0;
+}
+
+Problem Statement 3
+#include <iostream>
+using namespace std;
+
+class Time {
+public:
+    int h, m, s;
+    void accept() {
+        cout << "Enter time (HH MM SS): ";
+        cin >> h >> m >> s;
+    }
+    void convert() {
+        int total = h * 3600 + m * 60 + s;
+        cout << "Total seconds: " << total;
+    }
+};
+
+int main() {
+    Time t;
+    t.accept();
+    t.convert();
+    return 0;
+}

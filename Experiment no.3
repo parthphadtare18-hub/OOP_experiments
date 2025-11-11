@@ -1,0 +1,86 @@
+Problem Statement 1
+#include <iostream>
+using namespace std;
+
+class Book {
+public:
+    string title, author;
+    float price;
+
+    void accept() {
+        cout << "Enter title: ";
+        cin >> title;
+        cout << "Enter author: ";
+        cin >> author;
+        cout << "Enter price: ";
+        cin >> price;
+    }
+
+    void display() {
+        cout << "\nTitle: " << title << "\nAuthor: " << author << "\nPrice: " << price << endl;
+    }
+};
+
+int main() {
+    Book b, *ptr;
+    ptr = &b;
+    ptr->accept();
+    ptr->display();
+    return 0;
+}
+
+Problem Statement 2
+#include <iostream>
+using namespace std;
+
+class Student {
+public:
+    int roll_no;
+    float percentage;
+
+    void accept() {
+        cout << "Enter roll no: ";
+        cin >> this->roll_no;
+        cout << "Enter percentage: ";
+        cin >> this->percentage;
+    }
+
+    void display() {
+        cout << "\nRoll No: " << this->roll_no;
+        cout << "\nPercentage: " << this->percentage;
+    }
+};
+
+int main() {
+    Student s;
+    s.accept();
+    s.display();
+    return 0;
+}
+
+Problem Statement 3
+#include <iostream>
+using namespace std;
+
+class Outer {
+public:
+    class Inner {
+    public:
+        void show() {
+            cout << "This is an inner class function.";
+        }
+    };
+
+    void display() {
+        cout << "This is an outer class function.\n";
+    }
+};
+
+int main() {
+    Outer o;
+    o.display();
+
+    Outer::Inner i;
+    i.show();
+    return 0;
+}

@@ -1,0 +1,30 @@
+Problem Statement 1
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class VectorOps {
+    vector<int> v;
+public:
+    void create() {
+        v = {10, 20, 30};
+    }
+    void modify(int idx, int val) {
+        if (idx < v.size()) v[idx] = val;
+    }
+    void multiply(int scalar) {
+        for (int &x : v) x *= scalar;
+    }
+    void display() {
+        for (int x : v) cout << x << " ";
+    }
+};
+
+int main() {
+    VectorOps obj;
+    obj.create();
+    obj.modify(1, 50);
+    obj.multiply(2);
+    obj.display();
+    return 0;
+}

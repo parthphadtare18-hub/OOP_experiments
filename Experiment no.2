@@ -1,0 +1,95 @@
+Problem Statemnt 1
+#include <iostream>
+using namespace std;
+
+class City {
+public:
+    string name;
+    long population;
+
+    void accept() {
+        cout << "Enter city name: ";
+        cin >> name;
+        cout << "Enter population: ";
+        cin >> population;
+    }
+};
+
+int main() {
+    City c[5];
+    for(int i=0;i<5;i++) {
+        cout << "\nCity " << i+1 << ":\n";
+        c[i].accept();
+    }
+
+    int maxIndex = 0;
+    for(int i=1;i<5;i++)
+        if(c[i].population > c[maxIndex].population)
+            maxIndex = i;
+
+    cout << "\nCity with highest population: " << c[maxIndex].name;
+    return 0;
+}
+
+Problem Statement 2
+#include <iostream>
+using namespace std;
+
+class Account {
+public:
+    int accno;
+    float balance;
+
+    void accept() {
+        cout << "Enter account no: ";
+        cin >> accno;
+        cout << "Enter balance: ";
+        cin >> balance;
+    }
+};
+
+int main() {
+    Account a[10];
+    for(int i=0;i<10;i++) {
+        cout << "\nAccount " << i+1 << ":\n";
+        a[i].accept();
+    }
+
+    cout << "\nAccounts with balance >= 5000:\n";
+    for(int i=0;i<10;i++)
+        if(a[i].balance >= 5000)
+            cout << "Account No: " << a[i].accno << "  Balance: " << a[i].balance << endl;
+
+    return 0;
+}
+
+Problem Statement 3
+#include <iostream>
+using namespace std;
+
+class Staff {
+public:
+    string name, post;
+
+    void accept() {
+        cout << "Enter staff name: ";
+        cin >> name;
+        cout << "Enter post: ";
+        cin >> post;
+    }
+};
+
+int main() {
+    Staff s[5];
+    for(int i=0;i<5;i++) {
+        cout << "\nStaff " << i+1 << ":\n";
+        s[i].accept();
+    }
+
+    cout << "\nStaff members who are HOD:\n";
+    for(int i=0;i<5;i++)
+        if(s[i].post == "HOD" || s[i].post == "hod")
+            cout << s[i].name << endl;
+
+    return 0;
+}

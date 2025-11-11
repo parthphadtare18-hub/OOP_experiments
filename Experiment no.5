@@ -1,0 +1,91 @@
+Problem Statement 1
+#include <iostream>
+using namespace std;
+
+class Rectangle {
+    int length, breadth;
+public:
+    Rectangle() {   // default constructor
+        length = 5;
+        breadth = 3;
+    }
+    Rectangle(int l, int b) {  // parameterized constructor
+        length = l;
+        breadth = b;
+    }
+    void area() {
+        cout << "Area = " << length * breadth << endl;
+    }
+};
+
+int main() {
+    Rectangle r1;           // default
+    Rectangle r2(4, 6);     // parameterized
+
+    r1.area();
+    r2.area();
+    return 0;
+}
+
+Problem Statement 2
+#include <iostream>
+using namespace std;
+
+class Student {
+public:
+    string name;
+    int age;
+
+    Student(string n, int a) {   // parameterized
+        name = n;
+        age = a;
+    }
+
+    Student(Student &s) {        // copy constructor
+        name = s.name;
+        age = s.age;
+    }
+
+    void display() {
+        cout << "Name: " << name << ", Age: " << age << endl;
+    }
+};
+
+int main() {
+    Student s1("Parth", 16);
+    Student s2(s1);   // copy constructor called
+    s2.display();
+    return 0;
+}
+
+Problem Statement 3
+#include <iostream>
+using namespace std;
+
+class Complex {
+    int real, imag;
+public:
+    Complex(int r = 0, int i = 0) {
+        real = r;
+        imag = i;
+    }
+
+    Complex add(Complex c) {
+        Complex temp;
+        temp.real = real + c.real;
+        temp.imag = imag + c.imag;
+        return temp;
+    }
+
+    void display() {
+        cout << real << " + " << imag << "i" << endl;
+    }
+};
+
+int main() {
+    Complex c1(3, 4), c2(5, 6), c3;
+    c3 = c1.add(c2);
+    cout << "Sum = ";
+    c3.display();
+    return 0;
+}

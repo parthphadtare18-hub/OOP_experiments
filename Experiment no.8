@@ -1,0 +1,110 @@
+Problem Statement 1
+#include <iostream>
+using namespace std;
+
+class Student {
+public:
+    string name;
+    int roll;
+    void getData() {
+        cout << "Enter name and roll no: ";
+        cin >> name >> roll;
+    }
+};
+
+class Result : public Student {
+    float marks;
+public:
+    void getMarks() {
+        cout << "Enter marks: ";
+        cin >> marks;
+    }
+    void display() {
+        cout << "\nName: " << name << "\nRoll: " << roll << "\nMarks: " << marks << endl;
+    }
+};
+
+int main() {
+    Result r;
+    r.getData();
+    r.getMarks();
+    r.display();
+    return 0;
+}
+
+Problem Statement 2
+#include <iostream>
+using namespace std;
+
+class Person {
+public:
+    string name;
+    void getPerson() {
+        cout << "Enter name: ";
+        cin >> name;
+    }
+};
+
+class Job {
+public:
+    string company;
+    void getJob() {
+        cout << "Enter company name: ";
+        cin >> company;
+    }
+};
+
+class Employee : public Person, public Job {
+public:
+    void display() {
+        cout << "\nName: " << name << "\nCompany: " << company << endl;
+    }
+};
+
+int main() {
+    Employee e;
+    e.getPerson();
+    e.getJob();
+    e.display();
+    return 0;
+}
+
+Problem Statement 3
+#include <iostream>
+using namespace std;
+
+class Student {
+public:
+    int roll;
+    void getRoll() {
+        cout << "Enter roll number: ";
+        cin >> roll;
+    }
+};
+
+class Exam : public Student {
+public:
+    float marks1, marks2;
+    void getMarks() {
+        cout << "Enter marks in 2 subjects: ";
+        cin >> marks1 >> marks2;
+    }
+};
+
+class Result : public Exam {
+public:
+    void display() {
+        float total = marks1 + marks2;
+        cout << "\nRoll No: " << roll << "\nTotal Marks: " << total << endl;
+    }
+};
+
+int main() {
+    Result r;
+    r.getRoll();
+    r.getMarks();
+    r.display();
+    return 0;
+}
+
+

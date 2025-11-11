@@ -1,0 +1,78 @@
+Problem Statement 1
+#include <iostream>
+using namespace std;
+
+class Shape {
+public:
+    void area(float r) {  // circle
+        cout << "Area of Circle: " << 3.14 * r * r << endl;
+    }
+    void area(float l, float b) {  // rectangle
+        cout << "Area of Rectangle: " << l * b << endl;
+    }
+    void area(float b, float h, int) {  // triangle (int just to differentiate)
+        cout << "Area of Triangle: " << 0.5 * b * h << endl;
+    }
+};
+
+int main() {
+    Shape s;
+    s.area(5.0f);          // circle
+    s.area(4.0f, 6.0f);    // rectangle
+    s.area(5.0f, 10.0f, 0); // triangle
+    return 0;
+}
+
+Problem Statement 2
+#include <iostream>
+using namespace std;
+
+class Addition {
+public:
+    void add(int a, int b) {
+        cout << "Sum (int): " << a + b << endl;
+    }
+
+    void add(float a, float b) {
+        cout << "Sum (float): " << a + b << endl;
+    }
+
+    void add(string a, string b) {
+        cout << "Concatenation: " << a + b << endl;
+    }
+};
+
+int main() {
+    Addition a;
+    a.add(4, 6);
+    a.add(3.5f, 2.5f);
+    a.add("Hello", "World");
+    return 0;
+}
+
+Problem Statement 3
+#include <iostream>
+using namespace std;
+
+class Volume {
+public:
+    void volume(int a) {  // cube
+        cout << "Volume of Cube: " << a * a * a << endl;
+    }
+
+    void volume(float r, float h) {  // cylinder
+        cout << "Volume of Cylinder: " << 3.14 * r * r * h << endl;
+    }
+
+    void volume(int l, int b, int h) {  // rectangular box
+        cout << "Volume of Box: " << l * b * h << endl;
+    }
+};
+
+int main() {
+    Volume v;
+    v.volume(5);
+    v.volume(3.0f, 7.0f);
+    v.volume(4, 5, 6);
+    return 0;
+}
